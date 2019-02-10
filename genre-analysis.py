@@ -1,6 +1,7 @@
 import json
 import datetime
 import pprint
+import string
 import sys
 pp = pprint.PrettyPrinter(indent=4)
 
@@ -18,6 +19,9 @@ def main(): # Main function
 	for each in genre_list:
 		unique_genre_list += each.split(',')
 
+	for each in unique_genre_list:
+		each = each.strip()
+
 	unique_genre_list = list(set(unique_genre_list))
 
 	print(unique_genre_list)
@@ -34,6 +38,8 @@ def main(): # Main function
 			all_genre_list = []
 			for each in genre_list:
 				all_genre_list += each.split(',')
+				for each in all_genre_list:
+					each = each.strip(' ')
 
 			for genre in unique_genre_list:
 				percentage_dict[genre] = all_genre_list.count(genre)/len(all_genre_list)
