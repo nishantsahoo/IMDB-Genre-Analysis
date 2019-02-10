@@ -23,7 +23,10 @@ def main(): # Main function
 			if p_list[0]:
 				if p_list[0].find('span', attrs={'class': 'genre'}):
 					genre_value = p_list[0].find('span', attrs={'class': 'genre'}).text.strip()
-					genre += [genre_value]
+					genre_value = genre_value.split(",")
+					for i in range(0, len(genre_value)):
+						genre_value[i] = genre_value[i].strip()
+					genre += genre_value
 
 			id += 1
 
