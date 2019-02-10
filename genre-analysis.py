@@ -41,6 +41,9 @@ def main(): # Main function
 
 	pp.pprint(percentage_dict_year)
 
+	sys.stdout = open('Genre_Analysis//result.json', 'w')
+	print(json.dumps(percentage_dict_year, indent=4))
+
 	# End of the main function
 
 
