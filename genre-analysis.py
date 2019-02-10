@@ -30,14 +30,15 @@ def main(): # Main function
 		    data = json.load(read_file)
 		    genre_list += data[str(year)]		
 
-		all_genre_list = []
-		for each in genre_list:
-			all_genre_list += each.split(',')
+		if genre_list != []:
+			all_genre_list = []
+			for each in genre_list:
+				all_genre_list += each.split(',')
 
-		for genre in unique_genre_list:
-			percentage_dict[genre] = all_genre_list.count(genre)/len(genre)
+			for genre in unique_genre_list:
+				percentage_dict[genre] = all_genre_list.count(genre)/len(all_genre_list)
 
-		percentage_dict_year[year] = percentage_dict
+			percentage_dict_year[year] = percentage_dict
 
 	pp.pprint(percentage_dict_year)
 
