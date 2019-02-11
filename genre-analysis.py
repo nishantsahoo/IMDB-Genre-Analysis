@@ -15,14 +15,8 @@ def main(): # Main function
 		    genre_list += data[str(year)]
 
 	genre_list = list(set(genre_list))
-	unique_genre_list = []
-	for each in genre_list:
-		unique_genre_list += each.split(',')
 
-	for each in unique_genre_list:
-		each = each.strip()
-
-	unique_genre_list = list(set(unique_genre_list))
+	unique_genre_list = list(set(genre_list))
 
 	print(unique_genre_list)
 
@@ -35,14 +29,8 @@ def main(): # Main function
 		    genre_list += data[str(year)]		
 
 		if genre_list != []:
-			all_genre_list = []
-			for each in genre_list:
-				all_genre_list += each.split(',')
-				for each in all_genre_list:
-					each = each.strip(' ')
-
 			for genre in unique_genre_list:
-				percentage_dict[genre] = all_genre_list.count(genre)/len(all_genre_list)
+				percentage_dict[genre] = genre_list.count(genre)/len(genre_list)
 
 			percentage_dict_year[year] = percentage_dict
 
