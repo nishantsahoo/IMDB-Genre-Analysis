@@ -39,7 +39,7 @@ excel_rows = []
 with open("Genre_Analysis//result.json", "r") as read_file:
 	dataset = json.load(read_file)
 	for year in dataset.keys():
-		if int(year) > 1909:
+		if int(year) > 1919:
 			for genre in dataset[year]:
 				if genre in top_5_genre:
 					genre_percentage = dataset[year][genre]
